@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-content">
+            <a href="#home" class="nav-logo">Portfolio</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#resume">Resume</a>
+                <a href="#engineering">Engineering</a>
+                <a href="#photography">Photography</a>
+                <a href="#writing">Writing</a>
+                <a href="#reading">Reading</a>
+                <a href="#contact" class="contact-btn">Contact</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-name">Your Name</h1>
+            <p class="hero-tagline">Engineer • Photographer • Writer</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14m0 0l7-7m-7 7l-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://placehold.co/400x500/1a1a2e/ffffff?text=Your+Photo" alt="Portfolio Photo">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Welcome to my portfolio. I'm a multidisciplinary engineer with a passion for creating innovative solutions and capturing the world through different lenses.</p>
+                    <p>My work spans across engineering, photography, and writing, with each discipline informing and enriching the others. I believe in the power of creativity combined with technical expertise to solve complex problems and tell compelling stories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="featured" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="https://placehold.co/600x400/2d4059/ffffff?text=Project+1" alt="Featured Project 1">
+                    </div>
+                    <div class="featured-info">
+                        <h3>Project Title 1</h3>
+                        <p>A brief description of this featured engineering project and its impact.</p>
+                        <a href="#engineering" class="featured-link">View Project →</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="https://placehold.co/600x400/2d4059/ffffff?text=Project+2" alt="Featured Project 2">
+                    </div>
+                    <div class="featured-info">
+                        <h3>Project Title 2</h3>
+                        <p>A brief description of this featured engineering project and its impact.</p>
+                        <a href="#engineering" class="featured-link">View Project →</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="https://placehold.co/600x400/2d4059/ffffff?text=Project+3" alt="Featured Project 3">
+                    </div>
+                    <div class="featured-info">
+                        <h3>Project Title 3</h3>
+                        <p>A brief description of this featured engineering project and its impact.</p>
+                        <a href="#engineering" class="featured-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Work Navigation -->
+    <section class="explore-section">
+        <div class="container">
+            <h2 class="section-title">Explore My Work</h2>
+            <div class="explore-grid">
+                <a href="#engineering" class="explore-card">
+                    <div class="explore-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Engineering</h3>
+                    <p>Technical projects and innovations</p>
+                </a>
+                <a href="#photography" class="explore-card">
+                    <div class="explore-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Photography</h3>
+                    <p>Visual stories and captured moments</p>
+                </a>
+                <a href="#writing" class="explore-card">
+                    <div class="explore-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 19l7 2-7-2-7 2 7-2zm0 0V5v14zM5 5h14H5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 5L5 19l7-14z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Writing</h3>
+                    <p>Thoughts, articles, and reflections</p>
+                </a>
+                <a href="#reading" class="explore-card">
+                    <div class="explore-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2V3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7V3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Reading</h3>
+                    <p>Book reviews and recommendations</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-toggle">
+                <button class="toggle-btn active" data-lang="en">English</button>
+                <button class="toggle-btn" data-lang="de">Deutsch</button>
+            </div>
+            <div class="resume-content">
+                <div class="resume-viewer" id="resume-en">
+                    <div class="resume-header">
+                        <h1>Your Name</h1>
+                        <p class="resume-contact">email@example.com | +1 234 567 8900 | Location</p>
+                    </div>
+                    
+                    <div class="resume-section-block">
+                        <h2>Experience</h2>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h3>Position Title</h3>
+                                <span class="date">2023 - Present</span>
+                            </div>
+                            <p class="company">Company Name</p>
+                            <ul>
+                                <li>Key achievement or responsibility</li>
+                                <li>Another important contribution</li>
+                                <li>Technical skills demonstrated</li>
+                            </ul>
+                        </div>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h3>Previous Position</h3>
+                                <span class="date">2021 - 2023</span>
+                            </div>
+                            <p class="company">Previous Company</p>
+                            <ul>
+                                <li>Key achievement or responsibility</li>
+                                <li>Another important contribution</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-section-block">
+                        <h2>Education</h2>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h3>Degree Name</h3>
+                                <span class="date">2017 - 2021</span>
+                            </div>
+                            <p class="company">University Name</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-section-block">
+                        <h2>Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Programming</h4>
+                                <p>Python, JavaScript, C++, Java</p>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Technologies</h4>
+                                <p>React, Node.js, Docker, AWS</p>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Tools</h4>
+                                <p>Git, Linux, Figma, Adobe Suite</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-viewer" id="resume-de" style="display: none;">
+                    <div class="resume-header">
+                        <h1>Ihr Name</h1>
+                        <p class="resume-contact">email@example.com | +1 234 567 8900 | Standort</p>
+                    </div>
+                    
+                    <div class="resume-section-block">
+                        <h2>Berufserfahrung</h2>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h3>Positionstitel</h3>
+                                <span class="date">2023 - Heute</span>
+                            </div>
+                            <p class="company">Firmenname</p>
+                            <ul>
+                                <li>Wichtige Leistung oder Verantwortung</li>
+                                <li>Weiterer wichtiger Beitrag</li>
+                                <li>Demonstrierte technische Fähigkeiten</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-section-block">
+                        <h2>Ausbildung</h2>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h3>Abschlussname</h3>
+                                <span class="date">2017 - 2021</span>
+                            </div>
+                            <p class="company">Universitätsname</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-section-block">
+                        <h2>Fähigkeiten</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Programmierung</h4>
+                                <p>Python, JavaScript, C++, Java</p>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Technologien</h4>
+                                <p>React, Node.js, Docker, AWS</p>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Werkzeuge</h4>
+                                <p>Git, Linux, Figma, Adobe Suite</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Section -->
+    <section id="engineering" class="engineering-section">
+        <div class="container">
+            <h2 class="section-title">Engineering Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://placehold.co/800x600/2d4059/ffffff?text=Project+1" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name 1</h3>
+                        <p>A comprehensive description of your first major engineering project. This should highlight the key technologies used, the problem it solves, and the impact it has made. Include relevant technical details that showcase your expertise.</p>
+                        <button class="learn-more-btn" onclick="openProject('project1')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-content reverse">
+                    <div class="project-image">
+                        <img src="https://placehold.co/800x600/2d4059/ffffff?text=Project+2" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name 2</h3>
+                        <p>A comprehensive description of your second major engineering project. Explain the challenges you faced, the solutions you implemented, and the outcomes achieved. This is your opportunity to demonstrate your problem-solving skills.</p>
+                        <button class="learn-more-btn" onclick="openProject('project2')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://placehold.co/800x600/2d4059/ffffff?text=Project+3" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name 3</h3>
+                        <p>A comprehensive description of your third major engineering project. Detail the technical stack, your role in the project, and any innovative approaches you took. Show how this project demonstrates your growth as an engineer.</p>
+                        <button class="learn-more-btn" onclick="openProject('project3')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Section -->
+    <section id="photography" class="photography-section">
+        <div class="container">
+            <h2 class="section-title">Photography</h2>
+            <div class="photo-gallery" id="photoGallery">
+                <!-- Photos will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="photo-modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content-wrapper">
+            <img class="modal-photo" id="modalPhoto" src="" alt="">
+            <div class="modal-description" id="modalDescription"></div>
+        </div>
+    </div>
+
+    <!-- Writing Section -->
+    <section id="writing" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Writing</h2>
+            <div class="placeholder-content">
+                <p>This section is under development. Check back soon for articles and essays.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reading Section -->
+    <section id="reading" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Reading</h2>
+            <div class="placeholder-content">
+                <p>This section is under development. Check back soon for book reviews and recommendations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in hearing about new projects and opportunities.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>email@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>+1 234 567 8900</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Your Location</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Your Name. All rights reserved. All content on this website, including text, images, graphics, and code, is the property of Your Name and is protected by international copyright laws. Unauthorized use, reproduction, or distribution of any materials from this site without express written permission is strictly prohibited and may result in severe civil and criminal penalties. For licensing inquiries or permissions, please contact email@example.com.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="project-modal">
+        <span class="modal-close-project">&times;</span>
+        <div class="project-modal-content" id="projectModalContent">
+            <!-- Project details will be loaded here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
