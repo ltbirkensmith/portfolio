@@ -841,6 +841,11 @@ body {
     .explore-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .connect-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
 }
 
 @media (max-width: 768px) {
