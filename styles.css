@@ -83,6 +83,26 @@ body {
     color: var(--cornflower-blue);
 }
 
+.connect-btn {
+    background: var(--primary-black);
+    color: var(--white) !important;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-black);
+}
+
+.connect-btn::after {
+    display: none;
+}
+
+.connect-btn:hover {
+    background: var(--cornflower-blue) !important;
+    border-color: var(--cornflower-blue);
+    color: var(--white) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(100, 149, 237, 0.3);
+}
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -476,6 +496,49 @@ body {
     margin: 0 auto;
 }
 
+.resume-pdf-viewer {
+    animation: fadeIn 0.4s ease;
+    position: relative;
+}
+
+.pdf-frame {
+    width: 100%;
+    height: 1100px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: white;
+    display: block;
+}
+
+.resume-download {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: var(--cornflower-blue);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid var(--cornflower-blue);
+}
+
+.download-btn:hover {
+    background: var(--primary-black);
+    border-color: var(--primary-black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn svg {
+    stroke: currentColor;
+}
+
+/* Legacy resume content styling - keeping for backwards compatibility */
 .resume-content {
     animation: fadeIn 0.4s ease;
 }
@@ -585,6 +648,74 @@ body {
 .skill-group p {
     color: var(--dark-grey);
     line-height: 1.7;
+}
+
+/* ============================================
+   CONNECT SECTION
+   ============================================ */
+.connect-section {
+    padding: 140px 0;
+    background: var(--white);
+}
+
+.connect-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 80px;
+    font-size: 1.2rem;
+    color: var(--dark-grey);
+    line-height: 1.8;
+}
+
+.connect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.connect-card {
+    padding: 60px 40px;
+    text-align: center;
+    background: var(--white);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.connect-card:hover {
+    border-color: var(--cornflower-blue);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-light);
+}
+
+.connect-icon {
+    margin-bottom: 24px;
+    color: var(--cornflower-blue);
+    transition: transform 0.3s ease;
+}
+
+.connect-card:hover .connect-icon {
+    transform: scale(1.1);
+}
+
+.connect-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--primary-black);
+}
+
+.connect-value {
+    color: var(--dark-grey);
+    font-size: 1.05rem;
+    word-break: break-word;
 }
 
 /* Explore Section */
@@ -759,6 +890,10 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+    
+    .pdf-frame {
+        height: 800px;
     }
 }
 
