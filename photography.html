@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography - Your Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Your Name</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="engineering.html">Engineering</a>
+                <a href="photography.html">Photography</a>
+                <a href="writing.html">Writing</a>
+                <a href="reading.html">Reading</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Photography</h1>
+            <p class="page-subtitle">Visual narratives and captured moments</p>
+        </div>
+    </section>
+
+    <!-- Photography Gallery -->
+    <section class="photography-gallery-section">
+        <div class="photo-masonry" id="photoGallery">
+            <!-- Photos will be dynamically loaded by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="photo-modal">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-container">
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <div class="modal-meta">
+                    <span id="modalCamera"></span>
+                    <span id="modalLocation"></span>
+                    <span id="modalDate"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>email@example.com</p>
+                    <p>+1 (234) 567-8900</p>
+                    <p>City, Country</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">GitHub</a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigate</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="engineering.html">Engineering</a>
+                        <a href="photography.html">Photography</a>
+                        <a href="writing.html">Writing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Your Name. All rights reserved. All content on this website, including but not limited to text, graphics, images, code, and other materials, is the exclusive property of Your Name and is protected by international copyright laws and treaties. Any unauthorized use, reproduction, distribution, or modification of the materials contained herein without the express written permission of the copyright holder is strictly prohibited and may result in severe civil and criminal penalties, including monetary damages and injunctive relief. Violators will be prosecuted to the fullest extent of the law.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

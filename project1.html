@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Microservices Platform - Your Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Your Name</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="engineering.html">Engineering</a>
+                <a href="photography.html">Photography</a>
+                <a href="writing.html">Writing</a>
+                <a href="reading.html">Reading</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Content -->
+    <article class="project-detail">
+        <div class="container-narrow">
+            <!-- Back Button -->
+            <a href="engineering.html" class="back-link">← All Projects</a>
+            
+            <!-- Project Header -->
+            <header class="project-header">
+                <div class="project-meta-detail">
+                    <span class="project-category">Full Stack Development</span>
+                    <span class="project-year">2024</span>
+                </div>
+                <h1 class="project-title-detail">Distributed Microservices Platform</h1>
+                <p class="project-intro">A comprehensive cloud-native platform architected to handle high-volume traffic with scalable microservices architecture, real-time data processing, and fault-tolerant design patterns.</p>
+            </header>
+
+            <!-- Featured Image -->
+            <figure class="project-featured-image">
+                <img src="https://placehold.co/1400x800/6495ED/ffffff?text=Project+Main+Image" alt="Distributed Microservices Platform">
+            </figure>
+
+            <!-- Project Overview -->
+            <section class="project-section">
+                <h2>Overview</h2>
+                <p>This project represents a complete overhaul of legacy monolithic infrastructure into a modern, distributed microservices architecture. The platform serves over 100,000 daily active users, processing millions of transactions with 99.9% uptime and sub-200ms response times.</p>
+                <p>The system was designed from the ground up with scalability, reliability, and developer experience as core principles. Each service is independently deployable, scalable, and maintainable, enabling rapid feature development and seamless updates without downtime.</p>
+            </section>
+
+            <!-- Technical Details -->
+            <section class="project-section">
+                <h2>Technical Architecture</h2>
+                <p>The platform leverages a containerized microservices architecture deployed on Kubernetes clusters across multiple availability zones. Key technical components include:</p>
+                <ul class="project-list">
+                    <li><strong>API Gateway:</strong> Kong-based gateway handling authentication, rate limiting, and request routing with Redis caching layer</li>
+                    <li><strong>Service Mesh:</strong> Istio implementation for service-to-service communication, observability, and traffic management</li>
+                    <li><strong>Data Layer:</strong> PostgreSQL for transactional data, MongoDB for document storage, Redis for caching and session management</li>
+                    <li><strong>Message Queue:</strong> Apache Kafka for event streaming and asynchronous communication between services</li>
+                    <li><strong>Monitoring:</strong> Prometheus and Grafana for metrics, ELK stack for centralized logging</li>
+                </ul>
+            </section>
+
+            <!-- Additional Image -->
+            <figure class="project-image">
+                <img src="https://placehold.co/1400x700/6495ED/ffffff?text=Architecture+Diagram" alt="System Architecture">
+                <figcaption>High-level system architecture showing microservices interaction patterns</figcaption>
+            </figure>
+
+            <!-- Challenges Section -->
+            <section class="project-section">
+                <h2>Key Challenges & Solutions</h2>
+                <h3>Challenge 1: Data Consistency Across Services</h3>
+                <p>Maintaining data consistency in a distributed system presented significant challenges. We implemented the Saga pattern for distributed transactions and event sourcing for critical business operations, ensuring eventual consistency while maintaining system availability.</p>
+                
+                <h3>Challenge 2: Service Discovery & Load Balancing</h3>
+                <p>As services scaled horizontally, traditional load balancing became insufficient. We adopted Kubernetes-native service discovery with intelligent client-side load balancing, reducing latency by 40% and improving fault tolerance.</p>
+                
+                <h3>Challenge 3: Observability at Scale</h3>
+                <p>Understanding system behavior across dozens of services required comprehensive observability. We implemented distributed tracing with Jaeger, custom metrics dashboards, and automated alerting, reducing mean time to resolution (MTTR) by 65%.</p>
+            </section>
+
+            <!-- Results -->
+            <section class="project-section">
+                <h2>Results & Impact</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">99.9%</div>
+                        <div class="result-label">Uptime</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">70%</div>
+                        <div class="result-label">Deployment Time Reduction</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">100K+</div>
+                        <div class="result-label">Daily Active Users</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">3x</div>
+                        <div class="result-label">Performance Improvement</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technologies -->
+            <section class="project-section">
+                <h2>Technologies Used</h2>
+                <div class="tech-grid">
+                    <div class="tech-category">
+                        <h4>Backend</h4>
+                        <p>Node.js, Express, TypeScript, Python</p>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Frontend</h4>
+                        <p>React, Redux, TypeScript, Webpack</p>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Infrastructure</h4>
+                        <p>Kubernetes, Docker, AWS, Terraform</p>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Data</h4>
+                        <p>PostgreSQL, MongoDB, Redis, Kafka</p>
+                    </div>
+                    <div class="tech-category">
+                        <h4>DevOps</h4>
+                        <p>Jenkins, GitLab CI, Prometheus, Grafana</p>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Tools</h4>
+                        <p>Git, Jira, Confluence, Postman</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lessons Learned -->
+            <section class="project-section">
+                <h2>Lessons Learned</h2>
+                <p>This project reinforced the importance of investing in observability from day one. Early implementation of comprehensive logging, metrics, and tracing proved invaluable for debugging and optimization. Additionally, adopting Infrastructure as Code (IaC) significantly improved deployment consistency and team collaboration.</p>
+                <p>The transition from monolith to microservices required careful planning around service boundaries. We learned that starting with clearly defined domain boundaries and gradually decomposing services yielded better results than aggressive early decomposition.</p>
+            </section>
+        </div>
+
+        <!-- Project Navigation -->
+        <nav class="project-navigation">
+            <div class="container-narrow">
+                <a href="project5.html" class="nav-project nav-prev">
+                    <span class="nav-label">Previous Project</span>
+                    <span class="nav-title">Cross-Platform Mobile Application</span>
+                </a>
+                <a href="project2.html" class="nav-project nav-next">
+                    <span class="nav-label">Next Project</span>
+                    <span class="nav-title">Intelligent Data Analytics Engine</span>
+                </a>
+            </div>
+        </nav>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>email@example.com</p>
+                    <p>+1 (234) 567-8900</p>
+                    <p>City, Country</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">GitHub</a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigate</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="engineering.html">Engineering</a>
+                        <a href="photography.html">Photography</a>
+                        <a href="writing.html">Writing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Your Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
