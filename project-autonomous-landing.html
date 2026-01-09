@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autonomous Self-Landing UAV - Liam Smith</title>
+
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery.js" defer></script>
+
+    
     <style>
         * {
             margin: 0;
@@ -190,24 +195,77 @@
         </div>
         
         <span class="status-badge">⚙️ Project In Progress</span>
+
+         <!--Gallery photo-->
+        <div class="project-gallery">
+                <h2>Project Gallery</h2>
+                <div class="gallery-grid">
+                    
+                    <div class="gallery-item">
+                        <img src="Media/EPortfolio_Images/microg.jpg" alt="ASTROID CAD Model">
+                        <div class="gallery-caption">
+                            <p>Labelled diagram of the ASTROID device</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Media/Copy%20of%201F8A800B-C7A2-40DF-8F60-368BB8B28858.JPG">
+                        <div class="gallery-caption">
+                            <p>Me at the NBL control panel observing the test run-through along with the rest of CSI's team.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Media/EPortfolio_Images/overshotmicrog.png" alt="Team Presentation at JSC">
+                        <div class="gallery-caption">
+                            <p>Photograph of ASTROID device after testing in the Lunar Simulant Lab</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Media/EPortfolio_Images/microg.jpg" alt="Regolith Sample Collection">
+                        <div class="gallery-caption">
+                            <p>Research poster for presentation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="Media/EPortfolio_Images/undershotmicrog.png" alt="3D Printed Components">
+                        <div class="gallery-caption">
+                            <p>SOLIDWORKS model showing ASTROID device functionality</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <video controls loop>
+                        <source src="Media/EPortfolio_Images/WhatsApp%20Video%202025-05-30%20at%2018.26.34%20(online-video-cutter.com).mp4" muted controls type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                        <div class="gallery-caption">
+                            <p>Video showing ASTROID functionality, as tested by me</p>
+                    </div>
+                    
+                </div>
+            </div>
+    
         
         <div class="content-section">
-            <h2 class="section-title">Project Vision</h2>
+            <h2 class="section-title">General Overview</h2>
             <p class="section-text">
-                This summer, I set out to build a model airplane capable of landing itself autonomously using only visual guidance—no GPS, no external sensors, just computer vision and intelligent decision-making. The goal is to create a fully autonomous landing system that can identify a runway, calculate approach parameters, and execute a safe landing using real-time image processing and flight control.
+                This summer, I set out to build a model airplane capable of landing itself autonomously using only visual guidance and an ultrasonic distance sensor to measure ground-level altitude. My goal was to create a resilient system that could land from any configuration on a strip of land that can function as a runway.
             </p>
             <p class="section-text">
-                This project represents the intersection of computer vision, machine learning, embedded systems, and aeronautical engineering. It's inspired by how human pilots land aircraft—primarily through visual cues—and aims to replicate that capability in an autonomous system that can adapt to varying conditions and make split-second decisions.
+                This project represents the intersection of computer vision, machine learning, mechatronics, and aeronautical response. While I am still currently training my models and attempting to get better recognition and guidance as I try and resolve the legality of my plans, I'm excited about where this project might continue. Additionally, this was perhaps the first project where I've used AI to generate the framework of my code base.
             </p>
         </div>
         
         <div class="content-section">
-            <h2 class="section-title">Technology Stack</h2>
+            <h2 class="section-title">Technologies and Skills Used</h2>
             <div class="tech-tags">
                 <span class="tech-tag">YOLO (You Only Look Once)</span>
                 <span class="tech-tag">Raspberry Pi</span>
                 <span class="tech-tag">ESP32 Flight Controller</span>
-                <span class="tech-tag">Arduino Backup System</span>
+                <span class="tech-tag">Arduino</span>
                 <span class="tech-tag">Computer Vision</span>
                 <span class="tech-tag">Real-Time Processing</span>
                 <span class="tech-tag">Python</span>
@@ -219,13 +277,13 @@
         <div class="content-section">
             <h2 class="section-title">System Architecture</h2>
             <p class="section-text">
-                <strong>Vision System (Raspberry Pi + YOLO):</strong> The Raspberry Pi serves as the "eyes" and "brain" of the aircraft, running a customized YOLO visual recognition model trained to identify runways, calculate distances, and detect obstacles. The YOLO model processes video frames in real-time to extract critical landing information including runway orientation, distance, and approach angle.
+                <strong>Vision System (Raspberry Pi + YOLO):</strong> The Raspberry Pi processes visual signals and determines long-term flight commands. It runs a customized YOLO visual recognition model with Kalman filters paired with intertial navigationtrained to identify runways, calculate distances, and detect obstacles reliably. The YOLO model processes video frames in real-time to extract critical landing information including runway orientation, distance, and approach angle.
             </p>
             <p class="section-text">
-                <strong>Primary Flight Controller (ESP32):</strong> The ESP32 microcontroller acts as the primary flight controller, receiving commands from the Raspberry Pi and translating them into servo movements and throttle adjustments. It handles the real-time control loop necessary for stable flight, responding to vision system inputs within milliseconds.
+                <strong>Primary Flight Controller (ESP32):</strong> The ESP32 microcontroller acts as the primary flight controller, receiving commands from the Raspberry Pi and translating them into servo movements and throttle adjustments. Additionally, it handles flight stabilization and 
             </p>
             <p class="section-text">
-                <strong>Safety Backup (Arduino):</strong> An Arduino microcontroller serves as a hardcoded backup system that can take over control if the primary systems fail. It provides basic stabilization and emergency landing capabilities, ensuring the aircraft can be recovered even if the vision or ESP32 systems malfunction.
+                <strong>Safety Backup (Arduino):</strong> An Arduino microcontroller serves as a conduit for signals that can enable or disable transmitter and Pi-issues signals. It provides basic stabilization and emergency landing capabilities, ensuring the aircraft can be recovered even if the vision or ESP32 systems malfunction.
             </p>
         </div>
         
@@ -234,12 +292,9 @@
             <ul class="achievements-list">
                 <li>Programmed initial YOLO visual recognition model for runway detection and identification</li>
                 <li>Integrated Raspberry Pi hardware with camera system for real-time image capture</li>
-                <li>Developed real-time decision framework architecture for processing vision data</li>
                 <li>Configured ESP32 as flight controller with servo and throttle control capabilities</li>
-                <li>Implemented Arduino hardcode backup system for emergency scenarios</li>
                 <li>Conducted testing with real runway images to validate accuracy and object detection</li>
-                <li>Measured and optimizing response time for high-speed flight compatibility</li>
-                <li>Created mockup integration of system components within test aircraft</li>
+                <li>Created mockup integration of system components within test aircraft for CG and mass purposes</li>
             </ul>
         </div>
         
@@ -249,10 +304,10 @@
                 <strong>Processing Speed Optimization:</strong> The primary challenge is refining the YOLO model and decision framework to operate on a timescale workable for high-speed flight. Model airplanes approach and land at speeds of 20-40 mph, requiring processing and decision cycles measured in milliseconds. Current work focuses on model optimization, frame rate management, and predictive algorithms that can anticipate required control inputs.
             </p>
             <p class="section-text">
-                <strong>Real-Time Decision Making:</strong> Translating vision data into flight control commands requires sophisticated decision algorithms that can handle varying lighting conditions, wind effects, and unexpected obstacles. The system must balance aggressive maneuvering for precise control with smooth, stable flight that prevents oscillations or loss of control.
+                <strong>Real-Time Decision Making:</strong> Translating vision data into flight control commands requires sophisticated decision algorithms that can handle varying lighting conditions, wind effects, and unexpected obstacles.
             </p>
             <p class="section-text">
-                <strong>Hardware Integration:</strong> Integrating multiple processors (Raspberry Pi, ESP32, Arduino) with sensors, servos, and power systems within the confined space of a model aircraft presents significant packaging challenges. Weight distribution, electromagnetic interference, and thermal management must all be carefully considered.
+                <strong>Hardware Integration:</strong> Integrating multiple processors (Raspberry Pi, ESP32, Arduino) with sensors, servos, and power systems within the confined space of the model I am using (A Cirrus SR22 1.4m scale model). Weight distribution and power management are sticking points.
             </p>
         </div>
         
@@ -273,7 +328,7 @@
             <h2 class="section-title">Decision Framework Architecture</h2>
             <ul class="achievements-list">
                 <li>State machine architecture tracking flight phases: search, approach, final, flare, touchdown</li>
-                <li>Proportional-Integral-Derivative (PID) controllers for stable heading and altitude control</li>
+                <li>PID controllers for stable heading and altitude control integrated via ArduPilot</li>
                 <li>Kalman filtering to smooth noisy vision data and predict future positions</li>
                 <li>Risk assessment algorithms that evaluate landing safety and can trigger go-around</li>
                 <li>Wind estimation using ground speed calculations and drift compensation</li>
@@ -288,23 +343,10 @@
                 <strong>Benchtop Testing:</strong> Currently testing the vision system and decision framework using pre-recorded runway footage and simulated flight data. This allows rapid iteration without risk to aircraft hardware. Accuracy and response time measurements inform optimization efforts.
             </p>
             <p class="section-text">
-                <strong>Ground Testing:</strong> Next phase involves testing the complete integrated system on the ground, verifying communication between components, servo response times, and system power requirements. Ground tests validate the hardware integration before risking the aircraft in flight.
+                <strong>Ground Testing:</strong> Next, I will likely test it in the air with manual landing and record system behavior and compare it to my own behavior.
             </p>
             <p class="section-text">
-                <strong>Flight Testing Plan:</strong> Initial flight tests will use manual takeoff with gradual handoff to autonomous control at safe altitude. Testing will progress through straight-and-level autonomous flight, then gentle turns and descents, before attempting full autonomous landing sequences. Each phase builds confidence in system reliability.
-            </p>
-        </div>
-        
-        <div class="content-section">
-            <h2 class="section-title">Technical Innovations</h2>
-            <p class="section-text">
-                <strong>Lightweight Implementation:</strong> Achieving autonomous landing capability while maintaining acceptable aircraft weight and balance requires careful component selection and custom circuit integration. The entire system must weigh less than 500 grams to avoid significantly impacting flight characteristics.
-            </p>
-            <p class="section-text">
-                <strong>Adaptive Algorithms:</strong> The decision framework includes adaptive elements that learn from each landing attempt, adjusting control gains and approach parameters based on observed performance. This allows the system to improve over time and adapt to different aircraft configurations.
-            </p>
-            <p class="section-text">
-                <strong>Redundancy Architecture:</strong> Triple-redundant control system (Raspberry Pi, ESP32, Arduino) provides multiple levels of safety. Each system can operate independently if higher-level systems fail, ensuring the aircraft can always be recovered.
+                <strong>Flight Testing Plan:</strong> Full flight testing will likely not happen due to legality issues of autonomous UAVs
             </p>
         </div>
         
@@ -328,13 +370,13 @@
                 <strong>Summer 2025:</strong> Project initiation, YOLO model development, hardware procurement and initial integration.
             </p>
             <p class="section-text">
-                <strong>Fall 2025 - Spring 2026:</strong> Model training and optimization, benchtop testing, decision framework refinement, hardware integration completion.
+                <strong>Fall 2025 - Spring 2026:</strong> Model training and optimization.
             </p>
             <p class="section-text">
-                <strong>Summer 2026:</strong> Ground testing, initial flight tests with manual control, progressive autonomous capability testing, first attempted autonomous landing.
+                <strong>Summer 2026:</strong> Flight testing without control authority to measure performance in a real setting.
             </p>
             <p class="section-text">
-                <strong>Expected Achievement:</strong> Successful demonstration of fully autonomous landing capability using only visual guidance by Summer 2026.
+                <strong>Expected Achievement:</strong> Crossing my fingers for a safe flight! (Though legally this will never occur)
             </p>
         </div>
         
@@ -342,18 +384,15 @@
             <h2 class="section-title">Future Enhancements</h2>
             <ul class="achievements-list">
                 <li>Obstacle detection and avoidance during approach</li>
-                <li>Crosswind landing capability with automatic crab angle correction</li>
-                <li>Night landing using visible runway lighting</li>
                 <li>Emergency landing site selection when runway unavailable</li>
                 <li>Full autonomous flight including takeoff, navigation, and landing</li>
-                <li>Multiple aircraft coordination for sequential landings</li>
             </ul>
         </div>
         
         <div class="content-section">
             <h2 class="section-title">Broader Applications</h2>
             <p class="section-text">
-                While this project focuses on model aircraft, the technologies and techniques being developed have broader applications in autonomous vehicles, delivery drones, emergency response UAVs, and agricultural automation. Vision-based landing systems are particularly valuable in GPS-denied environments or when pinpoint accuracy is required beyond GPS capabilities.
+                I intend for this project to serve as a stepping stone to a future larger project that could assist GA pilots landing on unfinished runways. Another potential future project is to use this visual guidance technology to create a glider able to autonomously loiter.
             </p>
         </div>
     </div>
