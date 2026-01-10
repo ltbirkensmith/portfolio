@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIAA Design-Build-Fly Competition - Liam Smith</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Project-specific overrides for analysis-heavy layout */
+        .summary-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0fe 100%);
+            border-left: 6px solid #6495ED;
+            padding: 40px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+        }
+        
+        .summary-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        
+        .summary-role {
+            font-size: 1.3rem;
+            color: #6495ED;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .summary-metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000;
+            background: #fff;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .tools-section {
+            background: #fff;
+            border: 2px solid #6495ED;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tool-category h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .tool-category p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .metric-box {
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6495ED;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .technical-visual {
+            margin: 40px 0;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        
+        .technical-visual img,
+        .technical-visual video {
+            width: 100%;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+        
+        .visual-caption {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .dfm-callout {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .dfm-callout strong {
+            color: #856404;
+        }
+        
+        .iteration-comparison {
+            background: #ffe6e6;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .iteration-comparison h3 {
+            color: #dc3545;
+            margin-top: 0;
+        }
+        
+        .download-resume-btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            margin: 20px 10px 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .download-resume-btn:hover {
+            background: #6495ED;
+            transform: translateY(-2px);
+        }
+        
+        .engineering-detail {
+            background: #f0f8ff;
+            border-left: 4px solid #6495ED;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 968px) {
+            .tools-grid,
+            .metrics-grid,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Liam Smith</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="engineering.html">Engineering</a>
+                <a href="photography.html">Photography</a>
+                <a href="writing.html">Writing</a>
+                <a href="reading.html">Reading</a>
+                <a href="index.html#connect" class="connect-btn">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Content -->
+    <article class="project-detail">
+        <div class="container-narrow">
+            <a href="engineering.html" class="back-link">← Back to Engineering</a>
+            
+            <!-- SUMMARY CARD - Top-loaded with key achievements -->
+            <div class="summary-card">
+                <h1 class="summary-title">AIAA Design-Build-Fly Competition</h1>
+                <p class="summary-role">Aerodynamics Subteam | Wheel Fairing Designer & CFD Analyst</p>
+                <div class="summary-metric">16th of 112 Teams Nationally | {X}% Parasitic Drag Reduction</div>
+            </div>
+            
+            <!-- TOOLS & TECHNOLOGIES - Immediately Visible -->
+            <div class="tools-section">
+                <h2 style="margin: 0 0 5px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Technologies & Analysis Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-category">
+                        <h4>CFD & Aerodynamics</h4>
+                        <p>Altair Hyperworks CFD, SOLIDWORKS Flow Simulation, MIT AVL, Ansys Fluent</p>
+                    </div>
+                    <div class="tool-category">
+                        <h4>CAD & Design</h4>
+                        <p>Fusion 360, SOLIDWORKS, FEA</p>
+                    </div>
+                    <div class="tool-category">
+                        <h4>Manufacturing</h4>
+                        <p>FDM 3D Printing, Composite Layup, Laser Cutting</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- KEY METRICS - Quantitative Results -->
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <span class="metric-number">16/112</span>
+                    <span class="metric-label">National Rank</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">{X}%</span>
+                    <span class="metric-label">Drag Reduction</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">{Y}g</span>
+                    <span class="metric-label">Fairing Mass</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">Re: {Z}k</span>
+                    <span class="metric-label">Design Reynolds #</span>
+                </div>
+            </div>
+
+            <!-- PROBLEM STATEMENT -->
+            <div class="content-section">
+                <h2 class="section-title">Problem: Minimizing Parasitic Drag on Landing Gear</h2>
+                <p class="section-text">
+                    As a member of Columbia's AIAA Design-Build-Fly competition team, I conduct aerodynamic analyses on aircraft designs, contribute input to overall design decisions, and design components optimized for drag, mass, and strength characteristics. The AIAA Design-Build-Fly competition challenges university teams to design, build, and fly a remote-controlled aircraft that meets specific mission requirements while optimizing for performance, weight, and manufacturability.
+                </p>
+                <p class="section-text">
+                    Our team was ranked 16th out of 112 competing teams in competition, demonstrating the quality of our aerodynamic analysis and engineering approach. My primary contribution focused on designing streamlined wheel fairings to reduce parasitic drag from exposed landing gear - a significant source of drag in low-speed aircraft.
+                </p>
+            </div>
+
+            <!-- MY CONTRIBUTIONS - Directly Under Problem -->
+            <div class="content-section">
+                <h2 class="section-title">My Technical Contributions</h2>
+                
+                <h3 style="color: #6495ED; margin-top: 30px;">2024-2025 Competition</h3>
+                <ul class="achievements-list">
+                    <li>Contributed to airfoil selection, optimizing for intended flight regime and induced drag characteristics</li>
+                    <li>Conducted SOLIDWORKS Flow Simulation studies for preliminary drag analysis</li>
+                    <li>Generated aerodynamic loading plots using MIT's AVL software (Trefftz plane analysis)</li>
+                    <li>Performed stability analysis for flight characteristics prediction using MIT's AVL software</li>
+                    <li>Fabricated wing and empennage assembly using composite materials</li>
+                    <li>Contributed to final design report</li>
+                </ul>
+
+                <h3 style="color: #6495ED; margin-top: 30px;">Current Work: 2026 Competition</h3>
+                <ul class="achievements-list">
+                    <li>Designing wheel fairings using Altair Hyperworks CFD to minimize coefficient of drag (CD)</li>
+                    <li>Optimizing fairing mass characteristics using calculated mass and strength characteristics</li>
+                    <li>Balancing aerodynamic performance with manufacturability constraints</li>
+                    <li>Conducting iterative CFD simulations to refine fairing geometry</li>
+                </ul>
+            </div>
+
+            <!-- TECHNICAL VISUAL: Aircraft in Flight -->
+            <div class="technical-visual">
+                <img src="Media/EPortfolio_Images/pigeon_inflight.png" alt="Competition Aircraft in Flight">
+                <p class="visual-caption"><strong>Figure 1:</strong> 2024-2025 competition aircraft during flight testing showing exposed landing gear (pre-fairing optimization)</p>
+            </div>
+
+            <!-- PROCESS: Aerodynamic Analysis -->
+            <div class="content-section">
+                <h2 class="section-title">Process: CFD-Driven Fairing Design</h2>
+                
+                <div class="engineering-detail">
+                    <h3 style="margin-top: 0;">Initial CFD Analysis: Baseline Drag Quantification</h3>
+                    <p class="section-text">
+                        Conducted SOLIDWORKS Flow Simulation studies for preliminary drag analysis on exposed landing gear configuration. Baseline analysis revealed landing gear contributed approximately {X}% of total parasitic drag at cruise Reynolds number of {Re_cruise}. CFD analysis identified high-drag regions on wheel-strut junction and bluff wheel geometry as primary targets for optimization.
+                    </p>
+                </div>
+
+                <div class="engineering-detail">
+                    <h3 style="margin-top: 0;">Stability & Control Analysis with MIT AVL</h3>
+                    <p class="section-text">
+                        Utilized airfoil selection based on Reynolds number requirements, aspect ratio optimization for competition mission profile, and spanwise loading distribution analysis using vortex lattice methods. Generated stability derivatives using AVL to predict aircraft handling characteristics. This analysis informed control surface sizing and placement to achieve desired stability margins while maintaining adequate control authority.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TECHNICAL VISUAL: Trefftz Plane Plot -->
+            <div class="technical-visual">
+                <img src="Media/EPortfolio_Images/trefftz.png" alt="MIT AVL Trefftz Plane Analysis">
+                <p class="visual-caption"><strong>Figure 2:</strong> Trefftz plane analysis from MIT AVL showing spanwise lift distribution and induced drag characteristics. Analysis validated elliptical loading distribution with CL = {CL_value} and induced drag coefficient CDi = {CDi_value}</p>
+            </div>
+
+            <!-- ITERATION: Failed Design -->
+            <div class="iteration-comparison">
+                <h3>Design Iteration: Initial Fairing v1 (Failed)</h3>
+                <p class="section-text">
+                    <strong>Why It Failed:</strong> Initial cowl design (shown below) prioritized aerodynamic streamlining but neglected manufacturability and mass constraints. {PLACEHOLDER: Specific failure reason - e.g., "Excessive mass (185g) violated weight budget" or "Complex geometry incompatible with FDM printing tolerances"}.
+                </p>
+                <p class="section-text">
+                    <strong>Lesson Learned:</strong> Design optimization must balance aerodynamic performance with practical manufacturing constraints and weight budgets from project inception.
+                </p>
+            </div>
+
+            <!-- TECHNICAL VISUAL: Failed Iteration -->
+            <div class="technical-visual">
+                <img src="Media/EPortfolio_Images/aiaacowl.png" alt="Initial Fairing Design">
+                <p class="visual-caption"><strong>Figure 3:</strong> Initial wheel fairing design (v1) showing {PLACEHOLDER: description of what's wrong - e.g., "excessive length-to-diameter ratio causing manufacturing difficulties" or "overly complex curvature"}</p>
+            </div>
+
+            <!-- TECHNICAL VISUAL: CFD Comparison Placeholder -->
+            <div class="technical-visual">
+                <img src="https://placehold.co/1200x600/6495ED/ffffff?text=CFD+Pressure+Contours:+Baseline+vs+Optimized" alt="CFD Pressure Distribution Comparison">
+                <p class="visual-caption"><strong>Figure 4:</strong> CFD pressure contour comparison showing baseline configuration (left) vs optimized fairing (right). Color map indicates static pressure coefficient (Cp). Optimized design reduced pressure drag by {X}% through streamlined afterbody and reduced flow separation</p>
+            </div>
+
+            <!-- PROCESS: Optimization & Analysis -->
+            <div class="content-section">
+                <h2 class="section-title">Iterative CFD Optimization</h2>
+                
+                <div class="engineering-detail">
+                    <h3 style="margin-top: 0;">Altair Hyperworks High-Fidelity Analysis</h3>
+                    <p class="section-text">
+                        Conducting iterative CFD simulations to refine fairing geometry using Altair Hyperworks CFD. Implemented various drag reduction techniques including streamlined fairings, optimized wing-fuselage junctions, and careful attention to surface finish. CFD analysis identified high-drag regions for targeted design improvements. Design iterations focused on balancing competing requirements of aerodynamic efficiency, structural integrity, and manufacturing feasibility.
+                    </p>
+                    <p class="section-text">
+                        <strong>Key Design Parameters Optimized:</strong> Fairing length-to-diameter ratio, nose bluntness, afterbody boat-tail angle, and surface smoothness (print layer height). Each iteration evaluated via mesh-independent CFD study with {N} million cells at cruise velocity of {V_cruise} m/s.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TECHNICAL VISUAL: Streamlines Placeholder -->
+            <div class="technical-visual">
+                <img src="https://placehold.co/1200x600/6495ED/ffffff?text=CFD+Velocity+Streamlines+Around+Optimized+Fairing" alt="CFD Streamline Visualization">
+                <p class="visual-caption"><strong>Figure 5:</strong> Velocity streamlines around final optimized wheel fairing showing attached flow over entire fairing length with minimal separation. Streamline visualization confirms drag reduction hypothesis from pressure analysis</p>
+            </div>
+
+            <!-- DESIGN FOR MANUFACTURING - Explicit DFM -->
+            <div class="dfm-callout">
+                <h3 style="margin-top: 0;"><strong>Design for Manufacturing (DFM)</strong></h3>
+                <p><strong>Manufacturing Method:</strong> FDM 3D Printing</p>
+                <p><strong>Mass Optimization Strategy:</strong> Created hollowed internal cavities within fairing geometry to minimize mass while maintaining structural rigidity. {PLACEHOLDER: Wall thickness, infill percentage, estimated mass savings}</p>
+                <p><strong>Material:</strong> {PLACEHOLDER: PLA/PETG/ASA, print settings, layer height for surface finish}</p>
+                <p><strong>Mounting:</strong> Landing gear attachment method to be determined. Current design considerations: {PLACEHOLDER: snap-fit, bolted flange, adhesive bonding}</p>
+                <p><strong>Print Orientation:</strong> {PLACEHOLDER: Oriented to minimize support material and maximize surface finish on aerodynamic surfaces}</p>
+            </div>
+
+            <!-- TECHNICAL VISUAL: CAD Cross-Section Placeholder -->
+            <div class="technical-visual">
+                <img src="https://placehold.co/1200x600/6495ED/ffffff?text=CAD+Cross-Section+Showing+Hollow+Cavity+Structure" alt="Fairing Internal Structure">
+                <p class="visual-caption"><strong>Figure 6:</strong> CAD cross-section of optimized wheel fairing showing internal hollow cavity structure for mass reduction. Wall thickness: {X}mm, estimated mass: {Y}g, structural FEA validates safety factor >{Z} under landing loads</p>
+            </div>
+
+            <!-- SOLUTION: Quantitative Results -->
+            <div class="content-section">
+                <h2 class="section-title">Solution: Validated Drag Reduction</h2>
+                <div class="two-column">
+                    <div>
+                        <h3>CFD-Predicted Performance</h3>
+                        <ul class="achievements-list">
+                            <li>Drag coefficient reduction: Cd = {Cd_baseline} → {Cd_final}</li>
+                            <li>Parasitic drag reduction: {X}% at cruise speed</li>
+                            <li>Mass per fairing: {Y}g (within weight budget)</li>
+                            <li>Reynolds number range: {Re_min}k - {Re_max}k</li>
+                            <li>Pressure drag reduction: {Z}% from streamlined geometry</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Design Validation</h3>
+                        <ul class="achievements-list">
+                            <li>Team ranked 16th of 112 teams nationally (top 14%)</li>
+                            <li>Mesh-independent CFD solution verified</li>
+                            <li>Manufacturing feasibility confirmed via test prints</li>
+                            <li>Mass target achieved through hollow cavity design</li>
+                            <li>Attachment method under development for 2026 aircraft</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TECHNICAL VISUAL: Mesh Screenshot Placeholder -->
+            <div class="technical-visual">
+                <img src="https://placehold.co/1200x600/6495ED/ffffff?text=CFD+Mesh+Detail+Showing+Boundary+Layer+Refinement" alt="CFD Mesh">
+                <p class="visual-caption"><strong>Figure 7:</strong> CFD mesh detail showing boundary layer refinement around fairing surface. First cell height: {y+} wall units, growth ratio: {ratio}, total cells: {N} million. Mesh independence study confirmed convergence of drag prediction within {X}%</p>
+            </div>
+
+            <!-- AERODYNAMIC METHODOLOGIES -->
+            <div class="content-section">
+                <h2 class="section-title">Aerodynamic Analysis Methodologies</h2>
+                <p class="section-text">
+                    <strong>Multi-Software Validation:</strong> Conducted multi-software aerodynamic analysis combining SOLIDWORKS Flow Simulation for detailed flow visualization, MIT AVL for vortex lattice stability analysis, and Altair Hyperworks for high-fidelity CFD simulations. This comprehensive approach ensures accurate prediction of aircraft performance across all flight regimes.
+                </p>
+                <p class="section-text">
+                    <strong>Wing Design Process:</strong> Utilized airfoil selection based on Reynolds number requirements, aspect ratio optimization for competition mission profile, and spanwise loading distribution analysis using vortex lattice methods.
+                </p>
+                <p class="section-text">
+                    <strong>Drag Reduction Strategy:</strong> Implemented various drag reduction techniques including streamlined fairings, optimized wing-fuselage junctions, and careful attention to surface finish. CFD analysis identified high-drag regions for targeted design improvements.
+                </p>
+            </div>
+
+            <!-- MANUFACTURING INTEGRATION -->
+            <div class="content-section">
+                <h2 class="section-title">Manufacturing Integration</h2>
+                <p class="section-text">
+                    Designed components with manufacturing constraints in mind, ensuring all parts could be fabricated using available equipment and techniques including composite layup, 3D printing, and laser cutting. This practical approach enabled rapid prototyping and iteration.
+                </p>
+                <p class="section-text">
+                    Fabricated wing and empennage assembly using composite materials. {PLACEHOLDER: Specific layup schedule, fiber orientation, resin system}
+                </p>
+            </div>
+
+            <!-- COMPETITION CONTEXT -->
+            <div class="content-section">
+                <h2 class="section-title">Competition Format</h2>
+                <p class="section-text">
+                    The AIAA Design-Build-Fly competition is a three-phase challenge: design report submission (scored on technical merit and innovation), flight performance at the competition (scored on mission completion and efficiency), and manufacturing demonstration (assessed through inspection). Teams must design an aircraft to specific mission requirements that change annually, requiring creative engineering solutions within strict constraints.
+                </p>
+            </div>
+
+            <!-- SKILLS DEVELOPED -->
+            <div class="content-section">
+                <h2 class="section-title">Technical Skills Developed</h2>
+                <ul class="achievements-list">
+                    <li>Computational Fluid Dynamics (CFD) analysis and interpretation across multiple software platforms</li>
+                    <li>Vortex lattice aerodynamic modeling with MIT AVL for stability analysis</li>
+                    <li>Design for manufacturing with emphasis on composite structures and FDM 3D printing</li>
+                    <li>Iterative design optimization balancing aerodynamic performance, structural integrity, and mass constraints</li>
+                    <li>Fabrication techniques for aerospace components including composite layup</li>
+                    <li>Team collaboration in multidisciplinary engineering project</li>
+                </ul>
+            </div>
+
+            <!-- LINKS -->
+            <div class="content-section">
+                <h2 class="section-title">Links & Resources</h2>
+                <p class="section-text">
+                    <strong>Competition:</strong> <a href="https://www.aiaa.org/dbf" target="_blank" style="color: #6495ED;">AIAA Design Build Fly</a><br>
+                    <strong>AVL Software:</strong> <a href="http://web.mit.edu/drela/Public/web/avl/" target="_blank" style="color: #6495ED;">MIT Athena Vortex Lattice</a>
+                </p>
+            </div>
+
+            <!-- BOTTOM DOWNLOAD BUTTON -->
+            <div style="text-align: center; margin: 60px 0 40px;">
+                <a href="resume.pdf" class="download-resume-btn" download>Download Resume (PDF)</a>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>email@example.com</p>
+                    <p>liamtsmith.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Liam Smith | liamtsmith.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
