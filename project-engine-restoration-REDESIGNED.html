@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antique Engine Restoration - Liam Smith</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Project-specific overrides */
+        .summary-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0fe 100%);
+            border-left: 6px solid #6495ED;
+            padding: 40px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+        }
+        
+        .summary-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        
+        .summary-role {
+            font-size: 1.3rem;
+            color: #6495ED;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .summary-metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000;
+            background: #fff;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .tools-section {
+            background: #fff;
+            border: 2px solid #6495ED;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tool-category h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .tool-category p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .metric-box {
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6495ED;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .engine-spec-table {
+            background: #f9f9f9;
+            border: 2px solid #6495ED;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .engine-row {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            background: #fff;
+            margin: 10px 0;
+        }
+        
+        .engine-row:last-child {
+            border-bottom: none;
+        }
+        
+        .engine-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #6495ED;
+            margin-bottom: 10px;
+        }
+        
+        .problem-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .problem-box h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        .download-resume-btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            margin: 20px 10px 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .download-resume-btn:hover {
+            background: #6495ED;
+            transform: translateY(-2px);
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .image-placeholder {
+            background: #f9f9f9;
+            border: 2px dashed #ddd;
+            padding: 40px;
+            text-align: center;
+            color: #999;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 968px) {
+            .tools-grid,
+            .metrics-grid,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Liam Smith</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="engineering.html">Engineering</a>
+                <a href="photography.html">Photography</a>
+                <a href="writing.html">Writing</a>
+                <a href="reading.html">Reading</a>
+                <a href="index.html#connect" class="connect-btn">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Content -->
+    <article class="project-detail">
+        <div class="container-narrow">
+            <a href="engineering.html" class="back-link">← Back to Engineering</a>
+            
+            <!-- SUMMARY CARD -->
+            <div class="summary-card">
+                <h1 class="summary-title">Antique Nitromethane Engine Restoration</h1>
+                <p class="summary-role">Mechanical Restoration & Precision Machining</p>
+                <div class="summary-metric">30+ Year Old Engines | 1 of 3 Running</div>
+            </div>
+            
+            <!-- TOOLS & TECHNIQUES -->
+            <div class="tools-section">
+                <h2 style="margin: 0 0 5px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Tools & Techniques</h2>
+                <div class="tools-grid">
+                    <div class="tool-category">
+                        <h4>Machining</h4>
+                        <p>Lathe, Mill, Precision Measuring (Micrometers, Bore Gauges)</p>
+                    </div>
+                    <div class="tool-category">
+                        <h4>Restoration</h4>
+                        <p>Ultrasonic Cleaning, Honing, Chemical Solvents</p>
+                    </div>
+                    <div class="tool-category">
+                        <h4>Engine Mechanics</h4>
+                        <p>Two-Stroke Diagnostics, Carburetor Tuning, Compression Testing</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- KEY METRICS -->
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <span class="metric-number">30+</span>
+                    <span class="metric-label">Years Dormant</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">1992</span>
+                    <span class="metric-label">Last Run</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">1/3</span>
+                    <span class="metric-label">Restored to Operation</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">1 week</span>
+                    <span class="metric-label">Engine 1 Restoration</span>
+                </div>
+            </div>
+
+            <!-- PROBLEM STATEMENT -->
+            <div class="content-section">
+                <h2 class="section-title">Problem: Decades of Corrosion & Fuel Residue</h2>
+                <p class="section-text">
+                    Acquired three antique nitromethane-fueled model airplane engines—vintage powerplants that hadn't been run since 1992, over 30 years of sitting dormant. These small but complex two-stroke engines represent a fascinating intersection of mechanical engineering, chemistry, and aviation history. Through systematic troubleshooting, careful disassembly, precision machining, and meticulous refinishing of engine surfaces, I successfully brought one engine back to operational condition.
+                </p>
+                <p class="section-text">
+                    This project combines mechanical restoration, diagnostic problem-solving, and hands-on machining skills. Each engine presented unique challenges from decades of corrosion, fuel residue buildup, and worn components. The restoration process required understanding two-stroke engine mechanics, nitromethane fuel chemistry, and precision metalworking techniques.
+                </p>
+            </div>
+
+            <!-- ENGINE SPECIFICATIONS -->
+            <div class="engine-spec-table">
+                <h3 style="margin-top: 0; color: #6495ED;">Engine Inventory & Specifications</h3>
+                
+                <div class="engine-row">
+                    <div class="engine-name">Engine 1: OS Max 40 (Operational)</div>
+                    <p class="section-text" style="margin: 0;">
+                        <strong>Displacement:</strong> 6.5cc (0.40 cu in)<br>
+                        <strong>Type:</strong> Two-stroke glow ignition<br>
+                        <strong>Bore × Stroke:</strong> 20.0mm × 20.6mm<br>
+                        <strong>Power Output:</strong> ~0.9 HP @ 16,000 RPM<br>
+                        <strong>Weight:</strong> ~215g<br>
+                        <strong>Status:</strong> Successfully restored in 1 week, runs smoothly across full RPM range
+                    </p>
+                </div>
+                
+                <div class="engine-row">
+                    <div class="engine-name">Engine 2: OS FS 70 Surpass (Under Restoration)</div>
+                    <p class="section-text" style="margin: 0;">
+                        <strong>Displacement:</strong> 11.46cc (0.70 cu in)<br>
+                        <strong>Type:</strong> Four-stroke glow ignition<br>
+                        <strong>Bore × Stroke:</strong> 25.4mm × 22.6mm<br>
+                        <strong>Power Output:</strong> ~1.2 HP @ 10,500 RPM<br>
+                        <strong>Weight:</strong> ~380g<br>
+                        <strong>Status:</strong> 4 months sparse work, cylinder head thread damage requires remanufacturing
+                    </p>
+                </div>
+                
+                <div class="engine-row">
+                    <div class="engine-name">Engine 3: Supertigre G72 (Under Restoration)</div>
+                    <p class="section-text" style="margin: 0;">
+                        <strong>Displacement:</strong> 11.79cc (0.72 cu in)<br>
+                        <strong>Type:</strong> Two-stroke glow ignition<br>
+                        <strong>Bore × Stroke:</strong> 24.4mm × 25.2mm<br>
+                        <strong>Power Output:</strong> ~1.5 HP @ 15,000 RPM<br>
+                        <strong>Weight:</strong> ~295g<br>
+                        <strong>Status:</strong> 4 months sparse work, ongoing restoration
+                    </p>
+                </div>
+            </div>
+
+            <!-- PROCESS: RESTORATION METHODOLOGY -->
+            <div class="content-section">
+                <h2 class="section-title">Process: Systematic Restoration Methodology</h2>
+                
+                <h3>Phase 1: Initial Assessment</h3>
+                <p class="section-text">
+                    Conducted thorough visual inspection and compression testing to evaluate each engine's condition. Identified seized pistons, corroded cylinder walls, clogged fuel passages, and oxidized bearing surfaces as primary issues requiring attention.
+                </p>
+
+                <h3>Phase 2: Disassembly & Documentation</h3>
+                <p class="section-text">
+                    Carefully documented original configuration and component placement before systematic disassembly. Removed cylinder head, piston assembly, crankshaft, and carburetor components. Special care was taken with vintage gaskets and seals that would need replacement.
+                </p>
+                
+                <div class="image-placeholder">
+                    <p><strong>Disassembly Photos:</strong> Component layout and documentation<br>(Add photos)</p>
+                </div>
+
+                <h3>Phase 3: Cleaning & Corrosion Removal</h3>
+                <p class="section-text">
+                    <strong>Chemical Cleaning:</strong> Used appropriate solvents to remove decades of fuel varnish and carbon deposits from aluminum alloy components. Nitromethane fuel residue is highly corrosive and hygroscopic, creating stubborn deposits that required ultrasonic cleaning for complete removal from small passages.
+                </p>
+                <p class="section-text">
+                    <strong>Cylinder Refinishing:</strong> Employed fine abrasives and polishing compounds to restore cylinder bore surfaces without removing excessive material. Cleaned all fuel passages using wire and chemical methods. Used honing tools and lapping compounds for precision surface finishing while maintaining critical tolerances.
+                </p>
+
+                <h3>Phase 4: Component Assessment & Machining</h3>
+                <p class="section-text">
+                    Assessed wear on critical components including piston rings, connecting rod bearings, and crankshaft journals using precision measuring tools (micrometers, bore gauges). Re-lapped piston to cylinder for proper fit and compression.
+                </p>
+            </div>
+
+            <!-- THE CRITICAL PROBLEM: THREAD DAMAGE -->
+            <div class="problem-box">
+                <h3>Critical Problem: Cylinder Head Thread Corrosion (OS FS 70)</h3>
+                <p class="section-text">
+                    <strong>Problem Discovered:</strong> During disassembly of the OS FS 70, discovered that the cylinder head mounting threads had completely corroded away after 30+ years of nitromethane exposure. The corrosive and hygroscopic nature of nitromethane fuel had eaten through the aluminum threads, leaving no viable material for reassembly.
+                </p>
+                <p class="section-text">
+                    <strong>Impact:</strong> Without functional threads, the cylinder head cannot be secured to the cylinder block, making the engine inoperable. Replacement parts for this vintage engine are unavailable.
+                </p>
+                <p class="section-text">
+                    <strong>Solution Required:</strong> Remanufacture the cylinder head mounting threads using lathe and milling machine operations. This requires:
+                </p>
+                <ul class="achievements-list">
+                    <li>Precise measurement of original thread specifications (pitch, major/minor diameter, thread angle)</li>
+                    <li>Machining away corroded material to establish clean base surface</li>
+                    <li>Single-point thread cutting on lathe or thread milling operation</li>
+                    <li>Verification of thread fit with original head bolts</li>
+                    <li>Maintaining proper material thickness for structural integrity</li>
+                </ul>
+                <p class="section-text">
+                    <strong>Status:</strong> Thread damage documented, head awaiting remanufacturing on lathe/mill. Planning machining operations to restore functionality.
+                </p>
+                
+                <div class="image-placeholder" style="margin-top: 20px;">
+                    <p><strong>Thread Damage Photos:</strong> Corroded threads before machining<br>(Add photo of damaged threads)</p>
+                </div>
+            </div>
+
+            <!-- ENGINE MECHANICS EXPLANATION -->
+            <div class="content-section">
+                <h2 class="section-title">Engine Mechanics: Two-Stroke & Nitromethane</h2>
+                
+                <p class="section-text">
+                    <strong>Two-Stroke Operation:</strong> Unlike four-stroke engines, model engines complete a power cycle in just two strokes of the piston—compression and power. This design achieves high power-to-weight ratio crucial for model aircraft but requires precise port timing and lubrication delivered through the fuel mixture. The OS FS 70 is unique as a four-stroke model engine, providing smoother power delivery and more realistic sound.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Nitromethane Fuel Chemistry:</strong> These engines run on specialized fuel mixture containing nitromethane, methanol, and lubricating oil. Standard mixture with higher castor oil content provides better lubrication for vintage engines with tighter tolerances. Nitromethane acts as both fuel and oxidizer, allowing engines to achieve remarkably high power output (10,000-20,000 RPM typical). However, nitromethane is highly corrosive and hygroscopic, which contributed to extensive corrosion after decades of storage.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Compression & Carburetion:</strong> Model engines rely on extremely high compression ratios and precise fuel-air mixture control. The carburetor must atomize fuel effectively at high RPM while providing enough lubrication to prevent seizure.
+                </p>
+            </div>
+
+            <!-- RESTORATION RESULTS -->
+            <div class="content-section">
+                <h2 class="section-title">Results: OS Max 40 Operational Status</h2>
+                
+                <p class="section-text">
+                    <strong>Engine 1 (OS Max 40) - Successfully Restored:</strong> Completed restoration in 1 week of focused work. Engine achieves good compression, starts reliably with glow plug ignition, and runs smoothly across RPM range. Carburetor properly tuned for stable idle and full throttle operation. Currently being tested for extended run times to ensure reliability.
+                </p>
+                
+                <div class="image-placeholder">
+                    <p><strong>Running Engine:</strong> OS Max 40 operational demonstration<br>(Add video/photos of running engine)</p>
+                </div>
+
+                <p class="section-text">
+                    <strong>Engines 2 & 3 - Ongoing Work:</strong> OS FS 70 and Supertigre G72 both require more extensive restoration work. After 4 months of sparse work, both engines are partially disassembled with components cleaned and assessed. OS FS 70 cylinder head thread remanufacturing is the critical path item for completion.
+                </p>
+            </div>
+
+            <!-- TECHNICAL CHALLENGES -->
+            <div class="content-section">
+                <h2 class="section-title">Technical Challenges Overcome</h2>
+                <ul class="achievements-list">
+                    <li>Removing seized pistons without damaging cylinder walls required careful application of penetrating oil and heat cycling</li>
+                    <li>Sourcing or fabricating replacement gaskets for engines no longer in production</li>
+                    <li>Balancing aggressive cleaning with preservation of original surface finishes and critical tolerances</li>
+                    <li>Understanding vintage carburetor design and fuel delivery systems unique to nitromethane engines</li>
+                    <li>Diagnosing compression issues and port timing in engines with no available documentation</li>
+                    <li>Managing the highly volatile and corrosive nature of nitromethane fuel safely</li>
+                    <li>Planning precision machining operations to remanufacture corroded threads on cylinder head</li>
+                    <li>Achieving proper break-in procedure without modern instrumentation or load testing equipment</li>
+                </ul>
+            </div>
+
+            <!-- SKILLS DEMONSTRATED -->
+            <div class="content-section">
+                <h2 class="section-title">Skills Demonstrated</h2>
+                <div class="two-column">
+                    <div>
+                        <h4>Mechanical & Machining</h4>
+                        <ul class="achievements-list">
+                            <li>Precision measurement with micrometers and bore gauges</li>
+                            <li>Lathe and milling machine operation (planned for thread repair)</li>
+                            <li>Cylinder honing and surface refinishing techniques</li>
+                            <li>Thread cutting and remanufacturing methodology</li>
+                            <li>Understanding of mechanical tolerances and fits</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Diagnostic & Problem-Solving</h4>
+                        <ul class="achievements-list">
+                            <li>Systematic troubleshooting of complex mechanical systems</li>
+                            <li>Two-stroke and four-stroke engine thermodynamics</li>
+                            <li>Fuel chemistry and material compatibility</li>
+                            <li>Carburetor tuning and RPM optimization</li>
+                            <li>Creative solutions for obsolete component replacement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HISTORICAL SIGNIFICANCE -->
+            <div class="content-section">
+                <h2 class="section-title">Historical Significance</h2>
+                <p class="section-text">
+                    These engines represent an important era in model aviation history. Before modern electric motors and lithium batteries, nitromethane engines were the standard powerplant for serious model aircraft. They offered unmatched power-to-weight ratio and the authentic sound and smell of real aviation. The OS Max 40 and Supertigre G72 were particularly popular competition engines in the 1980s-90s.
+                </p>
+                <p class="section-text">
+                    Restoring these engines preserves both mechanical engineering heritage and model aviation history. The skills required—understanding carburetion, compression ratios, port timing, and fuel chemistry—represent a depth of mechanical expertise that's increasingly rare in our modern electric-powered world.
+                </p>
+            </div>
+
+            <!-- FUTURE WORK -->
+            <div class="content-section">
+                <h2 class="section-title">Future Work</h2>
+                <ul class="achievements-list">
+                    <li>Complete thread remanufacturing on OS FS 70 cylinder head using lathe and mill</li>
+                    <li>Finish restoration of Supertigre G72, addressing remaining corrosion and component wear</li>
+                    <li>Install restored engines in period-appropriate model aircraft for flight demonstration</li>
+                    <li>Document detailed restoration process to help others working on vintage engines</li>
+                    <li>Explore sourcing of donor engines for hard-to-find replacement parts</li>
+                </ul>
+            </div>
+
+            <!-- IMAGE GALLERY PLACEHOLDER -->
+            <div class="image-placeholder">
+                <p><strong>Restoration Gallery:</strong> All three engines, before/after, machining process<br>(Add comprehensive photo gallery)</p>
+            </div>
+
+            <!-- BOTTOM DOWNLOAD BUTTON -->
+            <div style="text-align: center; margin: 60px 0 40px;">
+                <a href="resume.pdf" class="download-resume-btn" download>Download Resume (PDF)</a>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>email@example.com</p>
+                    <p>liamtsmith.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Liam Smith | liamtsmith.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
