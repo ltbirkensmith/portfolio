@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Gateways to Blue Skies - Liam Smith</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Project-specific overrides */
+        .summary-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0fe 100%);
+            border-left: 6px solid #6495ED;
+            padding: 40px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+        }
+        
+        .summary-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        
+        .summary-role {
+            font-size: 1.3rem;
+            color: #6495ED;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .summary-metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000;
+            background: #fff;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .tools-section {
+            background: #fff;
+            border: 2px solid #6495ED;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tool-category h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .tool-category p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .metric-box {
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6495ED;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .comparison-table {
+            margin: 30px 0;
+            border: 2px solid #6495ED;
+            background: #f9f9f9;
+            padding: 25px;
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-label {
+            font-weight: 600;
+            color: #6495ED;
+        }
+        
+        .platform-analysis {
+            background: #f0f8ff;
+            border-left: 4px solid #6495ED;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .platform-analysis h3 {
+            color: #6495ED;
+            margin-top: 0;
+        }
+        
+        .tradeoff-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .trl-badge {
+            display: inline-block;
+            background: #6495ED;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin: 0 5px;
+        }
+        
+        .download-resume-btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            margin: 20px 10px 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .download-resume-btn:hover {
+            background: #6495ED;
+            transform: translateY(-2px);
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .award-highlight {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        .award-amount {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #856404;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 968px) {
+            .tools-grid,
+            .metrics-grid,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Liam Smith</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="engineering.html">Engineering</a>
+                <a href="photography.html">Photography</a>
+                <a href="writing.html">Writing</a>
+                <a href="reading.html">Reading</a>
+                <a href="index.html#connect" class="connect-btn">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Content -->
+    <article class="project-detail">
+        <div class="container-narrow">
+            <a href="engineering.html" class="back-link">← Back to Engineering</a>
+            
+            <!-- SUMMARY CARD -->
+            <div class="summary-card">
+                <h1 class="summary-title">NASA Gateways to Blue Skies Forum</h1>
+                <p class="summary-role">Aerospace Systems Consultant | PH-LORA Research Team</p>
+                <div class="summary-metric">Awarded $9,000 | Selected: 1 of 8 Finalist Teams</div>
+            </div>
+            
+            <!-- TOOLS & DOMAIN EXPERTISE -->
+            <div class="tools-section">
+                <h2 style="margin: 0 0 5px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Domain Expertise & Analysis Methods</h2>
+                <div class="tools-grid">
+                    <div class="tool-category">
+                        <h4>Platform Evaluation</h4>
+                        <p>UAV Architecture, VTOL Systems, Docking Infrastructure</p>
+                    </div>
+                    <div class="tool-category">
+                        <h4>Systems Analysis</h4>
+                        <p>Trade-off Studies, TRL Assessment, Risk Analysis</p>
+                    </div>
+                    <div class="tool-category">
+                        <h4>Technical Writing</h4>
+                        <p>Hardware Specifications, System Integration, Regulatory Review</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- KEY METRICS -->
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <span class="metric-number">$9K</span>
+                    <span class="metric-label">NASA Award</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">1/8</span>
+                    <span class="metric-label">Finalist Teams</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">300 ft</span>
+                    <span class="metric-label">Max Altitude</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">6</span>
+                    <span class="metric-label">Team Members</span>
+                </div>
+            </div>
+
+            <!-- PROBLEM STATEMENT -->
+            <div class="content-section">
+                <h2 class="section-title">Problem: Chemical Pesticide Dependency in Agriculture</h2>
+                <p class="section-text">
+                    Developed PH-LORA, an autonomous UAV-based pheromone deployment system integrating AI-powered pest detection, precision application drones, and species-specific biochemical solutions. Presented at NASA's Gateways to Blue Skies Forum as a sustainable alternative to carcinogenic chemical pesticides, addressing critical challenges in agricultural pest management including pesticide resistance, environmental contamination, and farmworker safety.
+                </p>
+                <p class="section-text">
+                    The system targets a $93/acre chemical pesticide market with a superior $120/acre pheromone solution that eliminates carcinogen exposure while enabling premium organic market positioning for farmers.
+                </p>
+            </div>
+
+            <!-- MY ROLE & CONTRIBUTIONS -->
+            <div class="content-section">
+                <h2 class="section-title">My Role: Aerospace & Mechanical Systems Consultant</h2>
+                <p class="section-text">
+                    As the only mechanical engineering student on a 6-person interdisciplinary team (biology, physics, political science majors), I provided aerospace and mechanical systems expertise for technology selection, platform evaluation, and long-term operational feasibility.
+                </p>
+                <ul class="achievements-list">
+                    <li>Authored hardware and docking station sections of NASA-selected research proposal</li>
+                    <li>Conducted comparative analysis of UAV platforms (quadcopter vs. monoplane vs. biplane vs. helicopter vs. hybrid VTOL)</li>
+                    <li>Evaluated monitoring systems and deployment mechanism architectures</li>
+                    <li>Performed Technology Readiness Level (TRL) assessment for integrated system</li>
+                    <li>Analyzed altitude-risk tradeoffs, recommending UAV operation for decreased risk and increased maneuverability despite higher energy costs</li>
+                    <li>Provided maintenance cost projections and long-term operational feasibility analysis</li>
+                    <li>Advised on UAV regulatory compliance (FAA requirements, operational restrictions)</li>
+                    <li>Presented drone specifications, system architecture, and technical innovations to NASA engineers and industry professionals</li>
+                </ul>
+            </div>
+
+            <!-- PROCESS: Platform Selection & Trade-off Analysis -->
+            <div class="content-section">
+                <h2 class="section-title">Process: UAV Platform Selection & Trade-off Analysis</h2>
+                
+                <div class="platform-analysis">
+                    <h3>Comparative UAV Architecture Evaluation</h3>
+                    <p class="section-text">
+                        Conducted multi-criteria analysis comparing different UAV platforms for agricultural pheromone deployment, evaluating strengths, weaknesses, opportunities, and trade-offs to optimize for system integration.
+                    </p>
+                </div>
+
+                <div class="comparison-table">
+                    <h4 style="margin-top: 0; color: #6495ED;">Platform Comparison Matrix</h4>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-label">Quadcopter</div>
+                        <div>
+                            <strong>Strengths:</strong> Precise hovering, vertical takeoff/landing, simple deployment<br>
+                            <strong>Weaknesses:</strong> Limited range, high energy consumption, short flight time<br>
+                            <strong>Decision:</strong> Rejected due to coverage limitations for large agricultural areas
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-label">Fixed-Wing (Mono/Biplane)</div>
+                        <div>
+                            <strong>Strengths:</strong> Efficient long-range transit, extended flight time, lower energy cost<br>
+                            <strong>Weaknesses:</strong> Requires runway/launcher, limited precision for targeted deployment<br>
+                            <strong>Decision:</strong> Good for coverage but lacks precision maneuvering capability
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-label">Helicopter</div>
+                        <div>
+                            <strong>Strengths:</strong> VTOL capability, good maneuverability, proven agricultural use<br>
+                            <strong>Weaknesses:</strong> Complex mechanics, higher maintenance, vibration concerns<br>
+                            <strong>Decision:</strong> Maintenance complexity conflicts with autonomous operation goals
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-label">Hybrid VTOL (Selected)</div>
+                        <div>
+                            <strong>Strengths:</strong> Fixed wings for transit + rotary for precision, VTOL capability, proven platform (Zipline P2)<br>
+                            <strong>Trade-off:</strong> Higher energy cost vs. pure fixed-wing, but acceptable for precision deployment requirements<br>
+                            <strong>Decision:</strong> <span style="color: #6495ED; font-weight: 600;">Optimal balance of range, precision, and operational flexibility</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALTITUDE-RISK ANALYSIS -->
+            <div class="content-section">
+                <h2 class="section-title">Key Engineering Insight: Altitude-Risk Trade-off</h2>
+                
+                <div class="tradeoff-box">
+                    <h4 style="color: #6495ED;">Risk Analysis: UAV vs. Ground-Based Application</h4>
+                    <p class="section-text">
+                        <strong>Finding:</strong> Risk to human operators and non-target organisms increases as altitude above ground decreases. Ground-based application (tractors, manual spraying) maximizes exposure risk.
+                    </p>
+                    <p class="section-text">
+                        <strong>Recommendation:</strong> UAV operation at 300 ft altitude provides optimal balance:
+                    </p>
+                    <ul class="achievements-list">
+                        <li>Minimized human exposure risk through elevated operation</li>
+                        <li>Increased maneuverability for precision targeting vs. fixed ground paths</li>
+                        <li>Reduced wildlife disturbance through altitude selection</li>
+                        <li>Trade-off: Higher energy cost acceptable given risk reduction and operational flexibility</li>
+                        <li>Compliance with FAA altitude restrictions for agricultural UAV operations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SOLUTION: SELECTED SYSTEM ARCHITECTURE -->
+            <div class="content-section">
+                <h2 class="section-title">Solution: Dual-Component System Architecture</h2>
+                
+                <div class="platform-analysis">
+                    <h3>Component 1: PH-LORA Hybrid VTOL Drone Platform</h3>
+                    <p class="section-text">
+                        An autonomous hybrid VTOL drone adapted from Zipline's P2 platform, featuring fixed wings for efficient transit and rotary wings for precise maneuvering. Operates at up to 300 feet altitude with centimeter-precise deployment accuracy, 360-degree airspace awareness, and collision avoidance systems.
+                    </p>
+                    <p class="section-text">
+                        <strong>Technical Specifications (Authored Section):</strong> Multi-nozzled retractable deployment mechanism for full crop coverage (base to canopy). Smart-release system with active stabilization in variable wind conditions. Novel deployment droid adapted from Zipline delivery system to accommodate species-specific spray patterns based on pest mating behavior.
+                    </p>
+                </div>
+                
+                <div class="platform-analysis">
+                    <h3>Component 2: Smart Docking Infrastructure</h3>
+                    <p class="section-text">
+                        <strong>Architecture Analysis (Authored Section):</strong> Adapted Zipline's charging dock and loading station for agricultural efficiency. Smart docking infrastructure serves as comprehensive hub for takeoff/landing, battery charging, and autonomous pheromone loading. Enables 24/7 deployment capability, satisfying complex species-specific application requirements that previously made pheromone treatments impractical at scale.
+                    </p>
+                    <p class="section-text">
+                        <strong>Maintenance Considerations:</strong> System designed for minimal maintenance requirements through modular battery swapping, automated cleaning cycles, and weather-resistant construction. Long-term operational costs projected to remain competitive with traditional pesticide application methods.
+                    </p>
+                </div>
+
+                <div class="platform-analysis">
+                    <h3>Component 3: Oracle Ground Surveillance Network</h3>
+                    <p class="section-text">
+                        A ground-level monitoring system using advanced optical sensors and AI to detect insect reproductive patterns and sexual maturity. Based on Trapview self-cleaning funnel traps with temperature/humidity sensors, Oracle provides 24/7 automated pest monitoring without manual intervention.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TECHNOLOGY READINESS LEVEL -->
+            <div class="content-section">
+                <h2 class="section-title">Technology Readiness Level (TRL) Assessment</h2>
+                <p class="section-text">
+                    Conducted TRL evaluation for integrated PH-LORA system to establish development pathway and identify technical risk areas:
+                </p>
+                <p class="section-text">
+                    <span class="trl-badge">TRL 9</span> Zipline P2 drone platform (flight-proven in commercial medical delivery operations)<br>
+                    <span class="trl-badge">TRL 5</span> Overall integrated system (component validation in relevant agricultural environment)<br>
+                    <span class="trl-badge">TRL 4</span> Pheromone dispersal system (laboratory validation, requires field demonstration)
+                </p>
+                <p class="section-text">
+                    <strong>Assessment Conclusion:</strong> Individual components at varying maturity levels. Primary technical risk identified in pheromone dispersal mechanism requiring further development for species-specific formulation compatibility. Integration testing critical path item for path to deployment.
+                </p>
+            </div>
+
+            <!-- OPERATIONAL WORKFLOW -->
+            <div class="content-section">
+                <h2 class="section-title">System Integration & Communication Structure</h2>
+                
+                <p class="section-text">
+                    <strong>Phase 1 - Detection:</strong> Oracle ground stations continuously monitor fields using AI-powered computer vision to identify pest species, developmental stages, and population density. When sexually mature insects are detected at threshold levels, Oracle transmits location data to the PH-LORA system.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Phase 2 - Deployment:</strong> PH-LORA autonomously selects and loads the appropriate species-specific pheromone solution from its docking station, navigates to the impacted zone using preset flight formulas optimized for target species behavior, and precisely applies the pheromone treatment using multi-nozzled deployment mechanisms.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Phase 3 - Return & Standby:</strong> The drone returns to its charging/resupply dock using 360-degree aerial awareness, automatically recharges, and stands ready for the next deployment based on Oracle's continued monitoring.
+                </p>
+            </div>
+
+            <!-- USE CASE: NAVEL ORANGEWORM -->
+            <div class="content-section">
+                <h2 class="section-title">Target Application: Navel Orangeworm in California Almonds</h2>
+                <p class="section-text">
+                    Initial deployment focuses on Navel Orangeworm (NOW) control in California almond farms. This use case was selected because almond production is concentrated in a single region, almonds are high-value crops, and effective pheromone treatments (CheckMate NOW-F) already exist but require labor-intensive manual application.
+                </p>
+                
+                <div class="two-column">
+                    <div>
+                        <h4>Traditional Chemical Approach</h4>
+                        <ul class="achievements-list">
+                            <li>Chemical pesticide: $93/acre</li>
+                            <li>Mummy nut sanitation: $300</li>
+                            <li>Health/safety risks to workers</li>
+                            <li>Environmental contamination</li>
+                            <li>Pesticide resistance buildup</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>PH-LORA Pheromone System</h4>
+                        <ul class="achievements-list">
+                            <li>Pheromone treatment: $120/acre</li>
+                            <li>Zero chemical exposure</li>
+                            <li>Premium organic market access</li>
+                            <li>Reduced crop loss</li>
+                            <li>Sustainable resistance management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REGULATORY ANALYSIS -->
+            <div class="content-section">
+                <h2 class="section-title">Regulatory Considerations & Compliance Path</h2>
+                
+                <p class="section-text">
+                    <strong>UAV Regulations (Advisory Role):</strong> Analyzed FAA requirements for commercial drone operations including pilot licensing, altitude restrictions, and time-of-day limitations. Proposed standardized training program for farmers and streamlined approval process to facilitate widespread adoption.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Safety Compliance:</strong> Pheromones are non-toxic to humans and non-target species, presenting minimal environmental risk compared to chemical pesticides. Advanced aerial navigation systems detect and avoid human presence, ensuring operational safety in agricultural environments.
+                </p>
+            </div>
+
+            <!-- PRESENTATION TO NASA -->
+            <div class="content-section">
+                <h2 class="section-title">NASA Presentation Contributions</h2>
+                <p class="section-text">
+                    Presented the following technical sections to NASA engineers and agricultural industry professionals at the Blue Skies Forum:
+                </p>
+                <ul class="achievements-list">
+                    <li>Drone specifications and hybrid VTOL platform rationale</li>
+                    <li>System architecture and component integration</li>
+                    <li>Economic benefits of autonomous deployment vs. manual application</li>
+                    <li>Technical innovations in deployment mechanism design</li>
+                    <li>Integration of existing technologies (Zipline P2, Trapview) into novel agricultural application</li>
+                    <li>Communication structure between Oracle monitoring and PH-LORA deployment systems</li>
+                </ul>
+            </div>
+
+            <!-- AWARD HIGHLIGHT -->
+            <div class="award-highlight">
+                <h3 style="color: #856404; margin-bottom: 15px;">Competition Results</h3>
+                <p class="section-text">
+                    Selected as one of 8 finalist teams out of approximately 65 applicants. Presented comprehensive solution to NASA engineers and agricultural industry professionals.
+                </p>
+                <div class="award-amount">$9,000 Award</div>
+                <p class="section-text" style="margin: 0;">
+                    Funding awarded to continue development of this transformative agricultural technology
+                </p>
+            </div>
+
+            <!-- ENVIRONMENTAL IMPACT -->
+            <div class="content-section">
+                <h2 class="section-title">Environmental Impact</h2>
+                <ul class="achievements-list">
+                    <li>Eliminates carcinogenic chemical pesticide exposure for farmworkers and consumers</li>
+                    <li>Prevents soil contamination and fertility loss from pesticide accumulation</li>
+                    <li>Protects water sources from agricultural runoff contamination</li>
+                    <li>Preserves beneficial insect populations including pollinators like bees</li>
+                    <li>Dramatically slows development of pesticide resistance in pest populations</li>
+                    <li>Reduces air pollution from pesticide aerosol application</li>
+                    <li>Enables transition to organic farming practices with premium market prices</li>
+                </ul>
+            </div>
+
+            <!-- SKILLS DEMONSTRATED -->
+            <div class="content-section">
+                <h2 class="section-title">Skills Demonstrated</h2>
+                <div class="two-column">
+                    <div>
+                        <h4>Technical Analysis</h4>
+                        <ul class="achievements-list">
+                            <li>Multi-criteria platform evaluation</li>
+                            <li>Trade-off studies and risk analysis</li>
+                            <li>TRL assessment methodology</li>
+                            <li>Systems integration thinking</li>
+                            <li>Long-term maintenance forecasting</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Communication</h4>
+                        <ul class="achievements-list">
+                            <li>Technical writing for NASA proposal</li>
+                            <li>Presenting to expert audiences</li>
+                            <li>Interdisciplinary collaboration</li>
+                            <li>Regulatory documentation review</li>
+                            <li>Stakeholder benefit articulation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LINKS -->
+            <div class="content-section">
+                <h2 class="section-title">Links & Resources</h2>
+                <p class="section-text">
+                    <strong>Competition:</strong> <a href="https://www.nasa.gov/aeronautics/agriculture-comp-finalists/" target="_blank" style="color: #6495ED;">NASA Finalists Announcement</a><br>
+                    <strong>Competition Record:</strong> <a href="https://blueskies.nianet.org/2025-record/" target="_blank" style="color: #6495ED;">2025 Blue Skies Record</a><br>
+                    <strong>Organization:</strong> <a href="https://www.columbiaspaceinitiative.com/" target="_blank" style="color: #6495ED;">Columbia Space Initiative</a>
+                </p>
+            </div>
+
+            <!-- BOTTOM DOWNLOAD BUTTON -->
+            <div style="text-align: center; margin: 60px 0 40px;">
+                <a href="resume.pdf" class="download-resume-btn" download>Download Resume (PDF)</a>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>email@example.com</p>
+                    <p>liamtsmith.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Liam Smith | liamtsmith.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
