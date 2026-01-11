@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket-Powered Glider - Liam Smith</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Project-specific overrides */
+        .summary-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0fe 100%);
+            border-left: 6px solid #6495ED;
+            padding: 40px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+        }
+        
+        .summary-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        
+        .summary-role {
+            font-size: 1.3rem;
+            color: #6495ED;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .summary-metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000;
+            background: #fff;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .tools-section {
+            background: #fff;
+            border: 2px solid #6495ED;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tool-category h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .tool-category p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .metric-box {
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6495ED;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .iteration-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .iteration-box h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        .spec-table {
+            background: #f9f9f9;
+            border: 2px solid #6495ED;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .spec-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #6495ED;
+        }
+        
+        .mechanism-diagram {
+            background: #f0f8ff;
+            border-left: 4px solid #6495ED;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .cfd-note {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        .download-resume-btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            margin: 20px 10px 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .download-resume-btn:hover {
+            background: #6495ED;
+            transform: translateY(-2px);
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .image-placeholder {
+            background: #f9f9f9;
+            border: 2px dashed #ddd;
+            padding: 40px;
+            text-align: center;
+            color: #999;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 968px) {
+            .tools-grid,
+            .metrics-grid,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Liam Smith</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="engineering.html">Engineering</a>
+                <a href="photography.html">Photography</a>
+                <a href="writing.html">Writing</a>
+                <a href="reading.html">Reading</a>
+                <a href="index.html#connect" class="connect-btn">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Content -->
+    <article class="project-detail">
+        <div class="container-narrow">
+            <a href="engineering.html" class="back-link">← Back to Engineering</a>
+            
+            <!-- SUMMARY CARD -->
+            <div class="summary-card">
+                <h1 class="summary-title">Rocket-Powered Glider with Deployable Wing</h1>
+                <p class="summary-role">Wing Designer | The Art of Engineering Course Project</p>
+                <div class="summary-metric">A+ Grade | Spitfire-Inspired Elliptical Wing</div>
+            </div>
+            
+            <!-- TOOLS & TECHNOLOGIES -->
+            <div class="tools-section">
+                <h2 style="margin: 0 0 5px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Technologies & Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-category">
+                        <h4>CAD & Analysis</h4>
+                        <p>SOLIDWORKS, Flow Simulation (CFD)</p>
+                    </div>
+                    <div class="tool-category">
+                        <h4>Manufacturing</h4>
+                        <p>Laser Cutting, Balsa/Plywood Construction</p>
+                    </div>
+                    <div class="tool-category">
+                        <h4>Design</h4>
+                        <p>Aerodynamic Optimization, Mechanical Integration</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- KEY METRICS -->
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <span class="metric-number">60 ft</span>
+                    <span class="metric-label">Altitude Achieved</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">7 sec</span>
+                    <span class="metric-label">Glide Duration</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number"><100g</span>
+                    <span class="metric-label">Total Mass</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number">30cm</span>
+                    <span class="metric-label">Wing Span</span>
+                </div>
+            </div>
+
+            <!-- PROBLEM STATEMENT -->
+            <div class="content-section">
+                <h2 class="section-title">Problem: Vertical Launch, Horizontal Glide</h2>
+                <p class="section-text">
+                    Designed and manufactured a rocket-powered glider featuring a deployable wing mechanism for Columbia's introductory engineering laboratory course. The challenge required vertical rocket-powered ascent followed by controlled horizontal glide descent, necessitating a wing that could deploy mid-flight while maintaining aerodynamic efficiency and structural integrity.
+                </p>
+                <p class="section-text">
+                    As part of a 4-person team, I was responsible for complete wing design, aerodynamic analysis, manufacturing, and integration with the fuselage and deployment mechanism. The wing planform was modeled on the iconic Supermarine Spitfire's elliptical geometry, optimized for low-speed gliding performance.
+                </p>
+            </div>
+
+            <!-- WING SPECIFICATIONS -->
+            <div class="spec-table">
+                <h3 style="margin-top: 0; color: #6495ED;">Wing Design Specifications</h3>
+                
+                <div class="spec-row">
+                    <div class="spec-label">Planform</div>
+                    <div>Elliptical (Supermarine Spitfire-inspired)</div>
+                </div>
+                
+                <div class="spec-row">
+                    <div class="spec-label">Wing Span</div>
+                    <div>30 cm (11.8 inches)</div>
+                </div>
+                
+                <div class="spec-row">
+                    <div class="spec-label">Root Chord</div>
+                    <div>10 cm (3.9 inches)</div>
+                </div>
+                
+                <div class="spec-row">
+                    <div class="spec-label">Aspect Ratio</div>
+                    <div>~3:1 (calculated from span and mean chord)</div>
+                </div>
+                
+                <div class="spec-row">
+                    <div class="spec-label">Airfoil</div>
+                    <div>Flat plate (no cambered airfoil)</div>
+                </div>
+                
+                <div class="spec-row">
+                    <div class="spec-label">Materials</div>
+                    <div>Balsa wood ribs, thin plywood skin, wood glue</div>
+                </div>
+                
+                <div class="spec-row">
+                    <div class="spec-label">Total Vehicle Mass</div>
+                    <div><100 grams (met project specification)</div>
+                </div>
+                
+                <div class="spec-row">
+                    <div class="spec-label">Manufacturing</div>
+                    <div>Precision laser-cut components, hand assembly</div>
+                </div>
+            </div>
+
+            <!-- PROCESS: DESIGN & ITERATION -->
+            <div class="content-section">
+                <h2 class="section-title">Process: Design, Analysis & Iteration</h2>
+                
+                <h3>Initial Wing Design</h3>
+                <p class="section-text">
+                    <strong>Planform Selection:</strong> Selected Supermarine Spitfire's elliptical wing planform for its aesthetically pleasing geometry and theoretically optimal lift distribution. Elliptical wings minimize induced drag by producing near-constant spanwise loading, though at the cost of increased manufacturing complexity compared to rectangular or tapered wings.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Aspect Ratio Trade-off:</strong> Designed with aspect ratio of ~3:1 to balance aerodynamic efficiency (higher AR preferred) against structural strength requirements and deployment mechanism constraints (lower AR preferred). The 30cm span provided adequate lift for controlled glide while maintaining compatibility with the sliding mechanism housing.
+                </p>
+
+                <h3>CFD Analysis: Learning Experience</h3>
+                <div class="cfd-note">
+                    <p class="section-text" style="margin: 0;">
+                        <strong>CFD Limitations:</strong> Though the SOLIDWORKS Flow Simulation did not yield useful drag coefficient values due to simulation setup limitations and mesh resolution constraints, it was nonetheless valuable for visualizing how pressure distributes around the airframe and observing void formation (flow separation regions). This qualitative flow visualization informed design decisions regarding wing tip shaping and surface smoothness requirements.
+                    </p>
+                </div>
+
+                <h3>Design Iteration: Nosecone Redesign</h3>
+                <div class="iteration-box">
+                    <h3>Problem Encountered: Excess Weight & Drag</h3>
+                    <p class="section-text">
+                        Initial design exceeded weight budget and exhibited higher-than-acceptable drag during preliminary analysis. The rocket nosecone diameter was too large, contributing significant frontal area drag during boost phase.
+                    </p>
+                    <p class="section-text">
+                        <strong>Solution:</strong> Narrowed the rocket nosecone diameter to reduce frontal area and drag coefficient while also removing excess material to meet <100g weight specification. This design iteration improved both boost phase performance (higher altitude) and overall flight stability.
+                    </p>
+                    
+                    <!-- Placeholder for before/after images -->
+                    <div class="two-column" style="margin-top: 20px;">
+                        <div>
+                            <div class="image-placeholder">
+                                <p><strong>Before:</strong> Original wide nosecone<br>(Add screenshot when found)</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="image-placeholder">
+                                <p><strong>After:</strong> Narrowed nosecone<br>(Add image)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEPLOYMENT MECHANISM -->
+            <div class="content-section">
+                <h2 class="section-title">Wing Deployment Mechanism</h2>
+                
+                <div class="mechanism-diagram">
+                    <h3 style="margin-top: 0; color: #6495ED;">Ejection Charge-Activated Deployment System</h3>
+                    
+                    <p class="section-text">
+                        <strong>Mechanism Design:</strong> Wing deployment triggered by the rocket motor's ejection charge through a clever string-release mechanism. During boost phase, the wing remained in a streamlined stowed configuration, held in place by a restraining string under tension from a rubber band.
+                    </p>
+                    
+                    <p class="section-text">
+                        <strong>Deployment Sequence:</strong>
+                    </p>
+                    <ol class="achievements-list" style="padding-left: 50px;">
+                        <li><strong>Boost Phase:</strong> Wing held streamlined against fuselage by restraining string, rubber band tensioned and ready</li>
+                        <li><strong>Apogee Detection:</strong> Rocket motor ejection charge fires at apogee (altitude peak)</li>
+                        <li><strong>String Burn-Through:</strong> Ejection charge heat burns through restraining string</li>
+                        <li><strong>Wing Deployment:</strong> Released rubber band pulls wing outward into glide configuration via sliding mechanism</li>
+                        <li><strong>Glide Phase:</strong> Deployed wing provides lift for controlled descent</li>
+                    </ol>
+                    
+                    <p class="section-text">
+                        <strong>Integration Challenge:</strong> Wing mounting points had to align precisely with sliding mechanism rails while allowing smooth deployment motion. Collaborated with fuselage team member to ensure proper clearances and minimize binding during deployment.
+                    </p>
+                </div>
+            </div>
+
+            <!-- MANUFACTURING -->
+            <div class="content-section">
+                <h2 class="section-title">Manufacturing Process</h2>
+                
+                <p class="section-text">
+                    <strong>Laser Cutting:</strong> Manufactured wing components using precision laser cutter, enabling accurate reproduction of the elliptical planform geometry. Laser cutting provided clean edges and consistent dimensions critical for aerodynamic performance and assembly fit.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Material Selection:</strong> Used lightweight balsa wood for wing ribs and thin plywood for wing skins, selected for favorable strength-to-weight ratio and compatibility with laser cutting. Material thickness optimized for structural requirements while minimizing weight penalty to meet <100g specification.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Assembly Techniques:</strong> Assembled wing structure using wood glue and pinning, ensuring proper alignment of ribs, spars, and skin. Applied lightweight covering material for aerodynamic surface smoothness while adding minimal weight.
+                </p>
+
+                <!-- Placeholder for manufacturing/assembly photos -->
+                <div class="image-placeholder">
+                    <p><strong>Manufacturing Photos:</strong> Laser cutting, assembly process<br>(Add photos when found)</p>
+                </div>
+            </div>
+
+            <!-- MY CONTRIBUTIONS -->
+            <div class="content-section">
+                <h2 class="section-title">My Contributions</h2>
+                <ul class="achievements-list">
+                    <li>Designed complete wing geometry modeled on Supermarine Spitfire elliptical planform (30cm span, 10cm chord)</li>
+                    <li>Conducted SOLIDWORKS Flow Simulation CFD analysis for qualitative flow visualization and pressure distribution understanding</li>
+                    <li>Created engineering drawings with proper dimensioning for laser cutter manufacturing</li>
+                    <li>Manufactured wing components using precision laser cutter for accurate geometry reproduction</li>
+                    <li>Assembled wing structure from balsa ribs and plywood skins using wood glue and pinning techniques</li>
+                    <li>Collaborated with 3-person team to integrate wing with fuselage, sliding deployment mechanism, and propulsion system</li>
+                    <li>Contributed to nosecone redesign iteration, narrowing diameter to reduce weight and drag</li>
+                    <li>Performed ground testing of deployment mechanism and structural integrity validation</li>
+                    <li>Participated in successful flight demonstration achieving 60ft altitude and 7-second controlled glide</li>
+                </ul>
+            </div>
+
+            <!-- SOLUTION: FLIGHT PERFORMANCE -->
+            <div class="content-section">
+                <h2 class="section-title">Solution: Flight Demonstration Results</h2>
+                
+                <p class="section-text">
+                    <strong>Launch Configuration:</strong> Wing positioned in streamlined configuration during boost phase to minimize drag and maximize altitude. Rocket motor provided thrust for vertical ascent to deployment altitude.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Wing Deployment:</strong> At apogee (~60 feet), ejection charge activated, burning through restraining string. Rubber band successfully pulled wing into glide configuration via sliding mechanism. Deployment occurred smoothly without tumbling or loss of control.
+                </p>
+                
+                <p class="section-text">
+                    <strong>Glide Performance:</strong> Deployed glider demonstrated stable, controlled descent with gentle glide pattern. Achieved approximately 7-second glide duration from 60-foot altitude, validating wing design and deployment mechanism effectiveness.
+                </p>
+
+                <!-- Placeholder for flight video/photos -->
+                <div class="image-placeholder">
+                    <p><strong>Flight Video & Photos:</strong> Launch, deployment, glide sequences<br>(Add video/photos when found)</p>
+                </div>
+            </div>
+
+            <!-- TEAM COLLABORATION -->
+            <div class="content-section">
+                <h2 class="section-title">Team Integration</h2>
+                <p class="section-text">
+                    Worked collaboratively with three team members, each responsible for different subsystems:
+                </p>
+                <ul class="achievements-list">
+                    <li><strong>Wing Design (My Role):</strong> Aerodynamic geometry, CFD analysis, manufacturing, assembly</li>
+                    <li><strong>Fuselage:</strong> Body tube structure, nosecone design, center of gravity management</li>
+                    <li><strong>Sliding Mechanism:</strong> Deployment rail system, rubber band tensioning, string restraint</li>
+                    <li><strong>Propulsion System:</strong> Rocket motor selection, ejection charge timing, thrust alignment</li>
+                </ul>
+                
+                <p class="section-text">
+                    Regular team meetings ensured component compatibility and coordinated assembly sequence. Resolved interface challenges including wing-to-rail alignment tolerances and center of gravity placement for stable flight.
+                </p>
+            </div>
+
+            <!-- PROJECT OUTCOME -->
+            <div class="content-section">
+                <h2 class="section-title">Project Outcome: A+ Grade</h2>
+                <p class="section-text">
+                    Our team's rocket-powered glider project earned an A+ grade, reflecting the quality of our engineering analysis, manufacturing execution, and successful flight demonstration. The project demonstrated effective application of aerodynamics principles, CAD design, precision manufacturing, and systems integration in a collaborative team environment.
+                </p>
+                <p class="section-text">
+                    <strong>Course Context:</strong> The Art of Engineering is Columbia's introductory engineering laboratory course designed to provide hands-on experience with the engineering design process. The course emphasizes practical skills including CAD, manufacturing, analysis, and team collaboration through project-based learning.
+                </p>
+            </div>
+
+            <!-- SKILLS DEVELOPED -->
+            <div class="content-section">
+                <h2 class="section-title">Skills Developed</h2>
+                <div class="two-column">
+                    <div>
+                        <h4>Technical Skills</h4>
+                        <ul class="achievements-list">
+                            <li>CFD analysis and flow visualization interpretation</li>
+                            <li>Wing planform design and geometry optimization</li>
+                            <li>Engineering drawing creation with proper dimensioning</li>
+                            <li>Laser cutting and precision manufacturing</li>
+                            <li>Lightweight structure design and construction</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Project Management</h4>
+                        <ul class="achievements-list">
+                            <li>Collaborative team coordination</li>
+                            <li>Subsystem integration thinking</li>
+                            <li>Design iteration and problem-solving</li>
+                            <li>Testing and validation methodology</li>
+                            <li>Trade-off analysis (weight vs. strength vs. aerodynamics)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KEY TAKEAWAYS -->
+            <div class="content-section">
+                <h2 class="section-title">Key Takeaways</h2>
+                <ul class="achievements-list">
+                    <li>Importance of weight management in aerospace design - every gram matters for altitude and flight duration</li>
+                    <li>Value of qualitative CFD analysis even when quantitative results are limited - flow visualization guides design decisions</li>
+                    <li>Critical role of manufacturing precision in achieving designed performance - laser cutting enabled accurate geometry reproduction</li>
+                    <li>Necessity of iterative design - nosecone redesign improved both weight and drag characteristics</li>
+                    <li>Systems integration requires careful interface coordination - wing deployment mechanism needed precise alignment with mounting points</li>
+                    <li>Satisfaction of seeing theoretical design validated through successful flight demonstration</li>
+                </ul>
+            </div>
+
+            <!-- FOUNDATION FOR FUTURE PROJECTS -->
+            <div class="content-section">
+                <h2 class="section-title">Foundation for Future Work</h2>
+                <p class="section-text">
+                    The experience gained in this introductory project provided a foundation for more advanced aerospace projects including the AIAA Design-Build-Fly competition and NASA Micro-G NExT challenge, where similar skills in aerodynamic analysis, CAD design, and precision manufacturing proved essential.
+                </p>
+            </div>
+
+            <!-- BOTTOM DOWNLOAD BUTTON -->
+            <div style="text-align: center; margin: 60px 0 40px;">
+                <a href="resume.pdf" class="download-resume-btn" download>Download Resume (PDF)</a>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>email@example.com</p>
+                    <p>liamtsmith.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Liam Smith | liamtsmith.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
